@@ -12,6 +12,21 @@ class Asset:
         self.description = description
         self.encrypted = False
 
+    def get_name(self):
+        return self.name
+
+    def get_description(self):
+        return self.description
+
+    def is_encrypted(self):
+        return self.encrypted
+
+    def set_name(self, name):
+        self.name = name
+
+    def set_description(self, description):
+        self.description = description
+
     def encrypt(self):
         if not self.encrypted:
             self.encrypted = True
