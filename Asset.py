@@ -22,10 +22,17 @@ class Asset:
         return self.encrypted
 
     def set_name(self, name):
-        self.name = name
+        if isinstance(name, str):
+            self.name = name
+        else:
+            print("Sorry, name should be a string value")
+
 
     def set_description(self, description):
-        self.description = description
+        if isinstance(description, str):
+            self.description = description
+        else:
+            print("Sorry, description should be a string value")
 
     def encrypt(self):
         if not self.encrypted:
@@ -40,4 +47,22 @@ class Asset:
             print(f"{self.name} cam out to be decrypted")
         else:
             print(f"{self.name} is previously decrypted")
+
+    def __str__(self):
+        return f"{self.name}, {self.description}" + ("[Encrypted]" if self.encrypted else "")
+
+    def design_crypto_token():
+        return Asset("CryptoToken", "It is used to acquire or repair rigs")
+
+    def design_data_spike():
+        return Asset("Data Spike", "will be used in battles")
+
+    def design_removable_drive():
+        return Asset("Removable Drive", "It is found in rigs and used for extraction")
+
+    def design_security_chip():
+        return Asset("Security Chip", "It is used to encrypt or decrypt assets")
+
+    def design_hardware_patch():
+        return Asset("Hardware Patch", "It is used to upgrade rigs")
 
