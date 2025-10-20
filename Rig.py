@@ -1,6 +1,6 @@
 """
 File: Rig.py
-Description: <A brief description of this Python module.>
+Description: A class representing a Rig that can gather damage, be repaired, upgraded and can store some of Asset.
 Author: <Jaskirat Uppal>
 ID: <110426141>
 Username: <uppjy001>
@@ -14,11 +14,9 @@ class Rig:
         self.damage = 0
         self.broken = False
         self.upgrade_level = 0
-        self.storage = [
-            Asset.design_data_spike(),
-            Asset.design_data_spike(),
-            Asset.design_removable_drive()
-        ]
+        self.storage = [Asset("Data Spike", "will be used in battles"),
+                        Asset("Data Spike", "will be used in battles"),
+                        Asset("Removable Drive", "It is found in rigs and used for extraction")]
 
     def get_name(self):
         return self.name
@@ -94,4 +92,6 @@ class Rig:
             return f"Broken (Level {self.upgrade_level})"
         return f"Pristine (Level {self.upgrade_level})"
 
+    def __str__(self):
+        return f"{self.get_name()}, Damage: {self.get_damage()}, {self.condition()}" + ( " [Broken]" if self.is_broken() else "")
 
