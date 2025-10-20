@@ -64,23 +64,23 @@ class Asset:
     def __str__(self):
         return f"{self.name}, {self.description}" + ("[Encrypted]" if self.encrypted else "")
 
-    def design_crypto_token():
+def design_crypto_token():
         """Designs and return CryptoToken asset"""
         return Asset("CryptoToken", "It is used to acquire or repair rigs")
 
-    def design_data_spike():
+def design_data_spike():
         """Designs and return Data Spike asset"""
         return Asset("Data Spike", "will be used in battles")
 
-    def design_removable_drive():
+def design_removable_drive():
         """Designs and return Removable Drive asset"""
         return Asset("Removable Drive", "It is found in rigs and used for extraction")
 
-    def design_security_chip():
+def design_security_chip():
         """Designs and return Security Chip asset"""
         return Asset("Security Chip", "It is used to encrypt or decrypt assets")
 
-    def design_hardware_patch():
+def design_hardware_patch():
         """Designs and return Hardware Patch asset"""
         return Asset("Hardware Patch", "It is used to upgrade rigs")
 
